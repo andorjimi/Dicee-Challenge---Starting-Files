@@ -12,7 +12,7 @@ let player2 = (document.querySelector('.img2').src = 'images/dice' + player2Dice
 if (player1Dice === player2Dice) {
 	document.getElementById('header').innerHTML = 'Draw';
 } else if (player1Dice > player2Dice) {
-	document.getElementById('header').innerHTML = 'P1 Winner';
+	document.getElementById('header').innerHTML = '🚩 P1 Winner';
 } else {
-	document.getElementById('header').innerHTML = 'P2 Winner';
+	document.getElementById('header').innerHTML = 'P2 Winner 🚩';
 }
