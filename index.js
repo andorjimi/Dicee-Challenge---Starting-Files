@@ -1,19 +1,3 @@
-// var randomNumber1 = Math.floor(Math.random() * 6) + 1;
-
-// const player1 = document.querySelector('.img1');
-// const player2 = document.querySelector('.img2');
-
-// let player1Dice = randomDice(player1);
-// let player2Dice = randomDice(player2);
-
-// console.log(player1Dice);
-// console.log(player2Dice);
-
-// function randomDice(element) {
-// 	var randomNumber1 = Math.floor(Math.random() * 6) + 1;
-// 	element.src = 'images/dice' + randomNumber1 + '.png';
-// }
-
 let player1Dice = randomDice();
 let player2Dice = randomDice();
 
@@ -22,12 +6,13 @@ function randomDice() {
 	return randomNumber1;
 }
 
-// This Function doesn't work!!
-function updateScreen(playerDiceNumber, img) {
-	document.querySelector(img);
-	element.src = 'images/dice' + playerDiceNumber + '.png';
-}
-updateScreen(player1Dice, '.img1');
+let player1 = (document.querySelector('.img1').src = 'images/dice' + player1Dice + '.png');
+let player2 = (document.querySelector('.img2').src = 'images/dice' + player2Dice + '.png');
 
-console.log(player1Dice);
-console.log(player2Dice);
+if (player1Dice === player2Dice) {
+	document.getElementById('header').innerHTML = 'Draw';
+} else if (player1Dice > player2Dice) {
+	document.getElementById('header').innerHTML = 'P1 Winner';
+} else {
+	document.getElementById('header').innerHTML = 'P2 Winner';
+}
